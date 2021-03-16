@@ -1,0 +1,47 @@
+{
+"value": 
+    [
+        {
+            "producto": "Portable DVD Player",
+            "proveedor": "Titanium",
+            "tamaño": "24 x 19.5 x 29cm",
+            "peso": 0.83,
+            "valor": 980
+        }, 
+        {
+            "producto": "Cargador Mac Pro",
+            "proveedor": "Arcor",
+            "tamaño": "23 x 17.5 x 20cm",
+            "peso": 1.2,
+            "valor": 880
+        },
+        {
+            "producto": "Adaptador Latitude P1233",
+            "proveedor": "Havanna",
+            "tamaño": "21 x 17.5 x 20cm",
+            "peso": 2,
+            "valor": 1442
+        },
+        {
+            "producto": "Iphone 8 Plus",
+            "proveedor": "Arcor",
+            "tamaño": "10 x 7 x 14cm",
+            "peso": 4.1,
+            "valor": 69000
+        },
+        {
+            "producto": "Airpods",
+            "proveedor": "Havanna",
+            "tamaño": "14 x 18 x 26cm",
+            "peso": 0.66,
+            "valor": 12000
+        },
+        {
+            "producto": "Ipad Mini",
+            "proveedor": "Arcor",
+            "tamaño": "10 x 12 x 20cm",
+            "peso": 5.3,
+            "valor": 45000
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+<mvc:View controllerName="Integrador.Integrador.controller.Main" displayBlock="true" 
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core">
+   
+   	<Page id="page" title="{i18n>title}">   
+		<content>
+            <OverflowToolbar >
+				<content>
+
+                    <Title text="{i18n>productos}" level="H2"/>
+                        <ToolbarSpacer/>
+                        <Label text="{i18n>fecha}"/>
+                        <Input value="{mensajeJSON>/fecha}" type="Date" width="25%" placeholder="Ingrese una Fecha"/>
+                        <ComboBox id="idPopinLayout"
+                            placeholder="{i18n>proveedores}"
+                            change="onPopinLayoutChanged"
+                            width="30%"
+                            selectedKey="{mensajeJSON>/proveedor}">
+                            <items>
+                                <core:Item key="Arcor" text="Arcor"/>
+                                <core:Item key="Havanna" text="Havanna"/>
+                                <core:Item key="Titanium" text="Titanium"/>
+                            </items>
+                        </ComboBox>
+                        <Input value="{mensajeJSON>/pais}" width="30%" placeholder="{i18n>pais}"/>
+                        <Button
+                        text="{i18n>ir}"
+                        press=".onOpenDialog"/>
+                
+				</content>
+			</OverflowToolbar>    
+
+            <VBox>
+           <Table id="idTableProductos" items="{productoJSON>/value}">
+                <headerToolbar>
+                    <OverflowToolbar width="100%">
+                        <content>
+                            <SearchField width="30%" placeholder="{i18n>buscar}" liveChange="onSearch"/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+
+                    <Column>
+                        <Text text="{i18n>producto}"/>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>proveedor}"/>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>tamaño}"/>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>peso}"/>
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>valor}"/>
+                    </Column>
+
+                </columns>
+                <items>
+
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{productoJSON>producto}"/>
+                        </cells>
+                        <cells>
+                            <Text text="{productoJSON>proveedor}"/>
+                        </cells>
+                        <cells>
+                            <Text text="{productoJSON>tamaño}"/>
+                        </cells>
+                        <cells>
+                            <ObjectNumber
+						    number="{productoJSON>peso}"
+						    unit="KG"
+						    state="{path: 'productoJSON>peso', formatter: '.Formatter.formatPeso'}"/>
+                        </cells>
+                        <cells>
+                            <Text text="{path: 'productoJSON>valor', formatter: '.Formatter.formatValor'} EUR"/>
+                        </cells>
+                    </ColumnListItem>
+                
+                </items>
+
+            </Table>
+        </VBox>              
+        </content>
+	</Page>			
+
+</mvc:View>
